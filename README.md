@@ -21,7 +21,7 @@
    npm run dev
 
    ```
- ### Setup tailwindcss intruction
+ ### Setup tailwindcss instruction
 
  1. Download tailwind dependencie
  ```
@@ -63,5 +63,12 @@
 
 ```
       npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+```
+
+## Adding plugins and dependencies
+
+```
+           npm install @reduxjs/toolkit react-redux react-router-dom react-icons react-chartjs-2 chart.js daisyui axios react-hot-toast @tailwindcss/line-clamp
 
 ```
