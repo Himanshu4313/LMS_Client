@@ -25,14 +25,14 @@
 
  1. Download tailwind dependencie
  ```
-      npm install -D tailwindcss
+      npm install -D tailwindcss postcss autoprefixer
 
  ```     
 
 2. Then run command for tailwind configuration
 
 ```
-     npx tailwindcss init        
+    npx tailwindcss init -p     
 
 ```
 
@@ -50,7 +50,7 @@
 
 ```
 
-4. Add the Tailwind directives to your CSS
+4. Add the Tailwind directives to your CSS in index css
 
 ```
         @tailwind base;
@@ -59,12 +59,7 @@
        
 ```
 
-5. Run the CLI tool to scan your template files for        classes and build your CSS.
 
-```
-      npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
-
-```
 
 ## Adding plugins and dependencies
 
