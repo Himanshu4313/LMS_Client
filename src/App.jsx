@@ -1,10 +1,15 @@
-import './App.css'
+import './App.css';
+
+import { Router } from 'react-router-dom';
 
 function App() {
 
   return (
     <>
-      LMS
+      <Router>
+
+        {/* <Route path="/" element = {<Home/>>}></Route> */}
+      </Router>
     </>
   )
 }
