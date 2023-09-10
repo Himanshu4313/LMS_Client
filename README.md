@@ -59,7 +59,12 @@
        
 ```
 
+5. Add this following properties in plugins of tailwind config
 
+```
+      plugins: [require('daisyui') , require('@tailwindcss/line-clamp')],
+
+```
 
 ## Adding plugins and dependencies
 

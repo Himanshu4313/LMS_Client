@@ -4,7 +4,7 @@ function Footer() {
   const year = currentDate.getFullYear();
   return (
     <>
-      <footer className=' flex justify-between items-center flex-col md:flex-row lg:flex-row py-3 px-5 bg-slate-800 text-white relative left-0 bottom-0 h-[19vh] md:h-[9vh] lg:h-[10vh] 
+      <footer className=' flex justify-between items-center flex-col md:flex-row lg:flex-row py-3 px-5 bg-gray-800 text-white relative left-0 bottom-0 h-[19vh] md:h-[9vh] lg:h-[10vh] 
       '>
         <section>
           Developed by Himanshu_Kumar
