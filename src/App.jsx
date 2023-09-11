@@ -2,7 +2,7 @@ import './App.css';
 
 import { Route, Routes } from 'react-router-dom';
 
-import HomeLayout from './Layouts/HomeLayout';
+import AboutUsPage from './Pages/AboutUsPage';
 import HomePage from './Pages/HomePage';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
     <>
        <Routes>
         <Route path='/' element={<HomePage/>}/>
+        <Route path='/aboutUS' element={<AboutUsPage/>}/>
        </Routes>
     </>
   )

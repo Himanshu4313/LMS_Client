@@ -6,7 +6,7 @@ function HomePage() {
     return (
         <>
             <HomeLayout>
-                <div className="my-6 pt-10 text-white flex justify-center items-center gap-10 md:flex-row lg:flex-row flex-col-reverse mx-16 h-[90vh]">
+                <div className=" pt-20 md:pt-10 lg:pt-10 pb-20  text-white flex justify-center items-center gap-10 md:flex-row lg:flex-row flex-col-reverse mx-16 md:h-[95vh] lg:h-[95vh]">
                     <div className=" w-fit md:w-1/2 lg:w-1/2 space-y-6 ">
                         <h1 className="text-5xl font-semibold">
                             Find out best
@@ -18,7 +18,7 @@ function HomePage() {
                             We have a large labrary of courses taught by highly skilled and qualified faculties at a very affordable cost.
                         </p>
 
-                        <div className="  flex justify-start items-center gap-10">
+                        <div className="  flex justify-start items-center gap-10 flex-col md:flex-row lg:flex-row">
 
                             <Link to={"/course"}>
                                 <button className=" py-3 px-5 text-lg font-semibold bg-yellow-600 rounded-md hover:bg-yellow-800 transition-all duration-200 ease-in-out flex justify-center items-center">Explore courses</button>
