@@ -6,8 +6,8 @@ function HomePage() {
     return (
         <>
             <HomeLayout>
-                <div className="pt-10 text-white flex justify-center items-center gap-10 mx-16 h-[90vh]">
-                    <div className="w-1/2 space-y-6">
+                <div className="my-6 pt-10 text-white flex justify-center items-center gap-10 md:flex-row lg:flex-row flex-col-reverse mx-16 h-[90vh]">
+                    <div className=" w-fit md:w-1/2 lg:w-1/2 space-y-6 ">
                         <h1 className="text-5xl font-semibold">
                             Find out best
                             <span className="text-yellow-500 font-bold ml-2  ">
@@ -21,12 +21,12 @@ function HomePage() {
                         <div className="  flex justify-start items-center gap-10">
 
                             <Link to={"/course"}>
-                                <button className=" py-3 px-5 text-xl font-semi-bold bg-yellow-600 rounded-md hover:bg-yellow-800 transition-all duration-200 ease-in-out flex justify-center items-center">Explore courses</button>
+                                <button className=" py-3 px-5 text-lg font-semibold bg-yellow-600 rounded-md hover:bg-yellow-800 transition-all duration-200 ease-in-out flex justify-center items-center">Explore courses</button>
                             </Link>
 
 
                             <Link to={"/contactUs"}>
-                                <button className=" py-3 px-5 text-xl font-semi-bold border border-yellow-600 rounded-md hover:bg-yellow-600 transition-all duration-200 ease-in-out flex justify-center items-center">
+                                <button className=" py-3 px-5 text-lg font-semibold border border-yellow-600 rounded-md hover:bg-yellow-600 transition-all duration-200 ease-in-out flex justify-center items-center">
                                     Contact Us
                                 </button>
                             </Link>
@@ -35,7 +35,7 @@ function HomePage() {
 
 
                     </div>
-                    <div className="w-1/2 flex justify-center items-center">
+                    <div className="w-fit md:w-1/2 lg:w-1/2 flex justify-center items-center">
                         <img src={HomePageImage} alt="HomePageImage" />
                     </div>
                 </div>
