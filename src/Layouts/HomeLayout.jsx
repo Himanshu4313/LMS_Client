@@ -4,21 +4,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 import Footer from '../Components/footer/Footer';
+import { logout } from '../Redux/Slice/AuthSlice';
 
 function HomeLayout({ children }) {
 
     const navigate = useNavigate();
-
+    const dispatch = useDispatch();
     // for checking if user id loggedIn
     const isLoggedIn = useSelector((state) => state ?.auth ?.isLoggedIn);
 
     // for displaying the option acc to role 
     const role = useSelector((state) => state?.auth?.role); 
     
-    function handleLogout(e){
+   async function handleLogout(e){
          e.preventDefault();
-        //  const res = await dispatch(logout());
-        // if(res?.payload?.success)
+         const res = await dispatch(logout());
+        if(res?.payload?.success)
         navigate("/");
     }
 
@@ -105,8 +106,8 @@ function HomeLayout({ children }) {
                                    Profile
                                  </Link>
                             </button>
-                            <button className=' btn-secondary px-4 py-1 font-semibold rounded-md w-full '>
-                                 <Link onClick={handleLogout}>
+                            <button className=' btn-secondary px-4 py-1 font-semibold rounded-md w-full  '>
+                                 <Link onClick={handleLogout} >
                                     Logout
                                  </Link>
                             </button>
