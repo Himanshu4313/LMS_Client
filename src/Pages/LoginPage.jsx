@@ -67,7 +67,7 @@ function LoginPage() {
         <>
             <HomeLayout>
 
-                <div className="flex justify-center items-center h-screen w-full">
+                <div className="flex justify-center items-center min-h-[90vh]">
 
                     <div className=" py-4 px-10 shadow-[0px_0px_15px_rgba(0,0,0,0.3)]  text-white">
                         <form noValidate onSubmit={logIn} className="flex flex-col justify-start items-center gap-3">
