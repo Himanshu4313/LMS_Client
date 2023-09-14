@@ -10,8 +10,11 @@
    box-sizing: border-box;
 
 }
+
+
 body{
     margin: auto;
     max-width: 1536px;
     position: relative;
+    font-family: 'Poppins', sans-serif;
 }
