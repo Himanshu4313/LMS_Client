@@ -17,7 +17,7 @@ function Denied() {
                     This page your are trying to access has restricted access. Please refer to your system administrator.
 
                 </p>
-                <button onClick={() => navigate(-1)}>
+                <button onClick={() => navigate("/")}>
                     <span className="py-4 px-6 border border-current font-semibold rounded hover:bg-yellow-500 hover:text-white transition-all ease-in-out duration-300">Go back</span>
                 </button>
             </main>
