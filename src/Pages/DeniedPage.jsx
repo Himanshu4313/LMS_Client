@@ -1,6 +1,7 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Denied() {
+    const navigate = useNavigate();
 
     return (
         <>
@@ -16,7 +17,7 @@ function Denied() {
                     This page your are trying to access has restricted access. Please refer to your system administrator.
 
                 </p>
-                <button onClick={() => Navigate(-1)}>
+                <button onClick={() => navigate(-1)}>
                     <span className="py-4 px-6 border border-current font-semibold rounded hover:bg-yellow-500 hover:text-white transition-all ease-in-out duration-300">Go back</span>
                 </button>
             </main>
