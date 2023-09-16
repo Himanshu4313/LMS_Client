@@ -70,6 +70,11 @@ function HomeLayout({ children }) {
                                     <Link to={"/admin/dasboard"}>Admin DashBoard</Link>
                                 </li>
                             )}
+                            {isLoggedIn && role === "ADMIN" && (
+                                <li>
+                                    <Link to={"/course/create"}>Create new Course</Link>
+                                </li>
+                            )}
 
                             <li>
                                 <Link to={"/course"}>Courses</Link>
@@ -104,7 +109,7 @@ function HomeLayout({ children }) {
                                     <div className='w-full flex justify-center item-center flex-col md:flex-row lg:flex-row'>
 
                                         <button className=' btn-primary px-4 py-1 font-semibold rounded-md w-full '>
-                                            <Link to={"/userprofile"}>
+                                            <Link to={"/user/profile"}>
                                                 Profile
                                             </Link>
                                         </button>
