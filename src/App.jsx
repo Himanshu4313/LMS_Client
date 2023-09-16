@@ -13,6 +13,7 @@ import HomePage from './Pages/HomePage';
 import LoginPage from './Pages/LoginPage';
 import NotFoundPage from './Pages/NotFoundPage';
 import SingUpPage from './Pages/SignupPage';
+import EditProfile from './Pages/User/EditProfile';
 import UserProfile from './Pages/User/Profile';
 
 function App() {
@@ -36,10 +37,12 @@ function App() {
           <Route path='/course/create' element={<CreateCourse />} />
         </Route>
 
-        {/* <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]} />}>
+        <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]} />}>
           <Route path='/user/profile' element={<UserProfile />} />
-        </Route> */}
-        <Route path='/user/profile' element={<UserProfile/>}/>
+          {/* <Route path='/user/EditProfile' element={<EditProfile/>}/> */}
+        </Route>
+        <Route path='/user/editprofile' element={<EditProfile/>}/>
+       
 
         
         {/* Route for pageNotFound */}

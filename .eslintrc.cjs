@@ -8,7 +8,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module'  ,  parser: "@babel/eslint-parser",},
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh' , 'simple-import-sort'],
   
@@ -21,4 +21,6 @@ module.exports = {
     "react/prop-types": "off",
     "no-unused-vars": "off",
   },
+  parser:"babel-eslint"
+ 
 }

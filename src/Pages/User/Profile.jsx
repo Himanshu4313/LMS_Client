@@ -42,12 +42,12 @@ function UserProfile() {
                         <div className=" w-full flex justify-center items-center gap-2 my-3 mx-1">
                             
                                 <button className=" w-full flex justify-center items-center bg-yellow-600 rounded-md py-2 px-3 hover:bg-yellow-500 transition-all ease-in-out duration-300">
-                                    <Link to={"/changePassword"}>Change Password</Link>
+                                    <Link to={"/user/changePassword"}>Change Password</Link>
                                 </button>
                             
                             
                                 <button className=" w-full flex justify-center items-center bg-yellow-600 rounded-md py-2 px-3 hover:bg-yellow-500 transition-all ease-in-out duration-300">
-                                    <Link to={"/EditProfile"}>Edit Profile</Link>
+                                    <Link to={"/user/editprofile"}>Edit Profile</Link>
                                 </button>
                            
 
