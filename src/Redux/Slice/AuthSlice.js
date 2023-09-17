@@ -14,7 +14,7 @@ const initialState = {
 // This createAccount code is work perfectly when i create  a server ....
 export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
   try {
-    const res = axiosInstance.post("user/register", data);
+    const res =  axiosInstance.post("user/register", data);
     toast.promise(res, {
       loading: "Wait! creating your account",
       success: (data) => {
@@ -34,7 +34,7 @@ export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
 // This login Account code is work perfectly when i create  a server ....
 export const login = createAsyncThunk("/auth/login", async (data) => {
   try {
-    const res = axiosInstance.post("user/login", data);
+    const res =  axiosInstance.post("user/login", data);
     toast.promise(res, {
       loading: "Wait! login here...",
       success: (data) => {
@@ -53,7 +53,7 @@ export const login = createAsyncThunk("/auth/login", async (data) => {
 
 export const logout = createAsyncThunk("auth/logout", async () => {
   try {
-    const res = axiosInstance.post("user/logout");
+    const res =  axiosInstance.post("user/logout");
     toast.promise(res, {
       loading: "Wait! logout is processing..",
       success: (data) => {
@@ -73,7 +73,7 @@ export const editProfileData = createAsyncThunk(
   "user/update/profile",
   async (data) => {
     try {
-      const response = axiosInstance.put(`/user/update/${data[0]}`, data[1]);
+      const response =  axiosInstance.put(`/user/update/${data[0]}`, data[1]);
       toast.promise(response, {
         loading: "Wait your profile is updating..",
         success: (data) => {
@@ -92,7 +92,7 @@ export const editProfileData = createAsyncThunk(
 // ************************this part is working when backend is create****************************
 export const getUserData = createAsyncThunk("/user/details", async () => {
   try {
-    const res = axiosInstance.get("user/me");
+    const res = await axiosInstance.get("user/me");
     return (await res).data;
   } catch (error) {
     toast.error(error.message);
