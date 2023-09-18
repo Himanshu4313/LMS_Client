@@ -15,6 +15,9 @@ import NotFoundPage from './Pages/NotFoundPage';
 import SingUpPage from './Pages/SignupPage';
 import EditProfile from './Pages/User/EditProfile';
 import UserProfile from './Pages/User/Profile';
+import Checkout from './Pages/Razorpay/CheckoutRazorpay';
+import CheckoutRazorpaySuccess from './Pages/Razorpay/CheckoutSuccess';
+import CheckoutRazorpayFail from './Pages/Razorpay/CheckoutFail';
 
 function App() {
 
@@ -39,11 +42,14 @@ function App() {
 
         <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]} />}>
           <Route path='/user/profile' element={<UserProfile />} />
-          <Route path='/user/EditProfile' element={<EditProfile/>}/>
+          <Route path='/user/EditProfile' element={<EditProfile />} />
+          <Route path='/user/subscribe' element={<Checkout />} />
+          <Route path='/checkout/success' element={<CheckoutRazorpaySuccess />} />
+          <Route path='/checkout/failed' element={<CheckoutRazorpayFail />} />
         </Route>
-       
 
-        
+
+
         {/* Route for pageNotFound */}
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
@@ -52,3 +58,4 @@ function App() {
 }
 
 export default App
+

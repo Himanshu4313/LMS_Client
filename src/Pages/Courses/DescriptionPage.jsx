@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import HomeLayout from "../../Layouts/HomeLayout";
 
@@ -37,9 +37,11 @@ function Description() {
                                             Watch Lecture</button>
 
                                     ) : (
+                                        <Link to="/user/subscribe">
                                         <button
                                             className="py-3 px-5 bg-yellow-500 w-full text-xl font-semibold hover:bg-yellow-600 transition-all ease-in-out duration-300 text-white rounded-md">
                                             Subscribe</button>
+                                        </Link>
                                     )
 
                                     }
