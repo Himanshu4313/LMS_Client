@@ -1,15 +1,22 @@
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 import profileImage from "../../assets/Image/apj.png";
 import HomeLayout from "../../Layouts/HomeLayout";
+import { cancelCourseBundle } from "../../Redux/Slice/RazorpaySlice";
+import { getUserData } from "../../Redux/Slice/AuthSlice";
 
 function UserProfile() {
 
     const { data } = useSelector((state) => state?.auth?.data);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    function handleCancelSubscription(){
-        
+   async  function handleCancelSubscription(){
+        await dispatch(cancelCourseBundle());
+        await dispatch(getUserData());
+        navigate("/");
+
     }
     return (
         <>
@@ -52,7 +59,7 @@ function UserProfile() {
                            
 
                         </div>
-                        
+                           {/* In cancel subscription you can change some changes in backend when you create then this part is work fine */}
                             {data?.subscription?.status === 'active' && (
                                <button
                                onClick={handleCancelSubscription} 
