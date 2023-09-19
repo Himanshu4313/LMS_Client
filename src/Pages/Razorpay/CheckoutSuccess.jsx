@@ -1,10 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import HomeLayout from "../../Layouts/HomeLayout";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getUserData } from "../../Redux/Slice/AuthSlice";
 
 function CheckoutRazorpaySuccess() {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getUserData());
+    },[])
 
     return (
         <>
