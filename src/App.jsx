@@ -18,6 +18,7 @@ import UserProfile from './Pages/User/Profile';
 import Checkout from './Pages/Razorpay/CheckoutRazorpay';
 import CheckoutRazorpaySuccess from './Pages/Razorpay/CheckoutSuccess';
 import CheckoutRazorpayFail from './Pages/Razorpay/CheckoutFail';
+import DisplayLectures from './Pages/Dashboard/DisplayLectures';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
           <Route path='/checkout/success' element={<CheckoutRazorpaySuccess />} />
           <Route path='/checkout/failed' element={<CheckoutRazorpayFail />} />
         </Route>
+        <Route path='/course/displaylectures' element={<DisplayLectures />} />
 
 
 

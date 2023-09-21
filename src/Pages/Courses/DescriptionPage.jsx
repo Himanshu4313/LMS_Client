@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 
 import HomeLayout from "../../Layouts/HomeLayout";
 
 function Description() {
     const { state } = useLocation();
     const { role, data } = useSelector((state) => state.auth);
+    const navigate = useNavigate();
     return (
         <>
             <HomeLayout>
@@ -30,18 +31,18 @@ function Description() {
                                         <span className="text-xl font-bold text-yellow-500">Instructor : {"  "}</span>
                                         {/* {state?.createdBy} */} Vishwa Mohan
                                     </p>
-                                    {role === "ADMIN" || data?.subscription?.status === "ACTIVE" ? (
+                                    {role === "ADMIN" || data?.subscription?.status === "active" ? (
 
-                                        <button
+                                             <button
+                                             onClick={() => navigate("/course/displaylectures", {state: {...state}})}
                                             className="py-3 px-5 bg-yellow-500 w-full text-xl font-semibold hover:bg-yellow-600 transition-all ease-in-out duration-300  text-white rounded-md">
                                             Watch Lecture</button>
 
                                     ) : (
-                                        <Link to="/user/subscribe">
                                         <button
+                                           onClick={() => navigate("/user/subscribe")}
                                             className="py-3 px-5 bg-yellow-500 w-full text-xl font-semibold hover:bg-yellow-600 transition-all ease-in-out duration-300 text-white rounded-md">
                                             Subscribe</button>
-                                        </Link>
                                     )
 
                                     }
