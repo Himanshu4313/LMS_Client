@@ -52,6 +52,30 @@ export const createNewCourse = createAsyncThunk(
 
 /***************************************************** */
 
+
+
+/*********************WHEN I CREATE BACKEND THEN ACTUALLY RUN THIS PROGRAMM******************************* */
+
+export const deleteCourse = createAsyncThunk(
+  "/course/delete",
+  async (id) => {
+    try {
+
+      const response = await axiosInstance.delete(`/courses/${id}`);
+      toast.promise(response, {
+        loading: "Wait! course is deleting",
+        success: "course delete successfully",
+        error: "Failed to delete course",
+      });
+      return (await response)?.data;
+    } catch (error) {
+      toast.error(error?.response?.data?.error);
+    }
+  }
+);
+
+/***************************************************** */
+
 export const courseSlice = createSlice({
   name: "courses",
   initialState,

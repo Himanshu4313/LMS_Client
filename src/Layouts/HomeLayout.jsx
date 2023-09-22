@@ -67,7 +67,7 @@ function HomeLayout({ children }) {
 
                             {isLoggedIn && role === "ADMIN" && (
                                 <li>
-                                    <Link to={"/admin/dasboard"}>Admin DashBoard</Link>
+                                    <Link to={"/admin/dashboard"}>Admin DashBoard</Link>
                                 </li>
                             )}
                             {isLoggedIn && role === "ADMIN" && (

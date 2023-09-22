@@ -62,7 +62,7 @@ function AddLecture() {
                 video_src: "",
 
             });
-
+           navigate(-1)
         }
     }
     //UNCOMMENT WHEN CREATE BACKEND
