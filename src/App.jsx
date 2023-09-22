@@ -19,6 +19,7 @@ import Checkout from './Pages/Razorpay/CheckoutRazorpay';
 import CheckoutRazorpaySuccess from './Pages/Razorpay/CheckoutSuccess';
 import CheckoutRazorpayFail from './Pages/Razorpay/CheckoutFail';
 import DisplayLectures from './Pages/Dashboard/DisplayLectures';
+import AddLecture from './Pages/Dashboard/addLecture';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
 
         <Route element={<RequireAuth allowedRoles={["ADMIN"]} />}>
           <Route path='/course/create' element={<CreateCourse />} />
+          <Route path='/course/addlecture' element={<AddLecture />} />
         </Route>
 
         <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]} />}>
@@ -47,9 +49,8 @@ function App() {
           <Route path='/user/subscribe' element={<Checkout />} />
           <Route path='/checkout/success' element={<CheckoutRazorpaySuccess />} />
           <Route path='/checkout/failed' element={<CheckoutRazorpayFail />} />
+          <Route path='/course/displaylectures' element={<DisplayLectures />} />
         </Route>
-        <Route path='/course/displaylectures' element={<DisplayLectures />} />
-
 
 
         {/* Route for pageNotFound */}
