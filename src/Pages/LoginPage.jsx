@@ -14,8 +14,8 @@ function LoginPage() {
 
     const [logindata, setLoginData] = useState({
 
-        email: "",
-        password: "",
+        email:"",
+        password:"",
 
     })
 
@@ -25,10 +25,10 @@ function LoginPage() {
         const { name, value } = e.target;
         setLoginData({
             ...logindata,
-            [name]: value
+            [name]:value
         })
     }
-
+     console.log(logindata);
     // hadle login account 
 
     async function logIn(event) {
@@ -38,12 +38,16 @@ function LoginPage() {
             return;
         }
 
+        console.log('before formData',logindata);
+        // const loginData = new FormData();
+        // loginData.append("email", loginData.email);
+        // loginData.append("password", loginData.password);
+        const loginData = {
+            email:logindata.email,
+            password:logindata.password
+        }
 
-        const loginData = new FormData();
-        loginData.append("email", loginData.email);
-        loginData.append("password", loginData.password);
-
-
+        console.log('form Data',loginData);
         //dispatch login account action
         const response = await dispatch(login(loginData));
         if (response?.payload?.success) {

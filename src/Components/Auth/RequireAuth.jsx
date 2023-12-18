@@ -3,8 +3,10 @@ import { Navigate, Outlet } from "react-router-dom";
 
 function RequireAuth({ allowedRoles }) {
 
-    const { role, isLoggedIn } = useSelector((state) => state.auth);
-
+    const {data} = useSelector((state) => state?.auth);
+    console.log(data);
+     const role = data.role;
+     const isLoggedIn = data.isLoggedIn;
     return (
         <>
             {

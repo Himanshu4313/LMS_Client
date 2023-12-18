@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 import Footer from '../Components/footer/Footer';
-import { logout } from '../Redux/Slice/AuthSlice';
+import { getUserData, logout } from '../Redux/Slice/AuthSlice';
 
 function HomeLayout({ children }) {
 
@@ -22,7 +22,13 @@ function HomeLayout({ children }) {
         if (res?.payload?.success)
             navigate("/");
     }
-
+//    async function handleProfile(e){
+//         e.preventDefault();
+//         const res = await dispatch(getUserData());
+//         if(res?.payload?.success){
+//             navigate('/user/profile');
+//         }
+//    }
     function changeWidth() {
         const drawerSide = document.getElementsByClassName("drawer-side");
         drawerSide[0].style.width = 'auto';
@@ -109,7 +115,7 @@ function HomeLayout({ children }) {
                                     <div className='w-full flex justify-center item-center flex-col md:flex-row lg:flex-row'>
 
                                         <button className=' btn-primary px-4 py-1 font-semibold rounded-md w-full '>
-                                            <Link to={"/user/profile"}>
+                                            <Link to={'/user/profile'}>
                                                 Profile
                                             </Link>
                                         </button>
