@@ -9,8 +9,9 @@ function DisplayLectures() {
     const { state } = useLocation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { lectures } = useSelector((state) => state.lecture);
-    const { role } = useSelector((state) => state?.auth?.role);
+    const  lectures  = useSelector((state) => state?.lecture?.lectures);
+    console.log('lectures array',lectures);
+    const  role  = useSelector((state) => state?.auth?.role);
 
     const [currentVideo, setCurrentVideo] = useState(0);
 
@@ -28,21 +29,21 @@ function DisplayLectures() {
 
     // UNCOMMENT WHEN I CREATE BACKEND PART OF THIS LMS  
 
-    // useEffect(() => {
-    //     if(!state) {
-    //         navigate("/course");
-    //     }
-    //      dispatch(getCourseLecture(state_id));
-    // },[])
+    useEffect(() => {
+        if(!state) {
+            navigate("/course");
+        }
+         dispatch(getCourseLecture(state._id));
+    },[])
     return (
         <>
             <HomeLayout>
                 <div className="flex flex-col gap-10 justify-center items-center h-[100vh] text-white py-8 mx-4 ">
                     <div className="text-center text-2xl font-semibold text-yellow-500">
-                        {/* Course Name : {state.title} */}
-                        Course Name : Full Stack Web Development
+                        Course Name : {state.title}
+                        
                     </div>
-                    {lectures && lectures.length > 0(<div className="flex justify-center items-center gap-10 w-full">
+                    {lectures && (<div className="flex justify-center items-center gap-10 w-full">
                         {/* Left side for playing video  */}
                         <div className=" space-y-4 w-[28rem]   rounded shadow-[0_0_10px_black] p-2  ">
                             <video
@@ -55,16 +56,16 @@ function DisplayLectures() {
                             </video>
                             <h1>
                                 <span className="text-yellow-500 font-semibold">Title :{" "}</span>
-                                {lectures && lectures[currentVideo]?.lecture?.title}
+                                {lectures && lectures[currentVideo]?.title}
                             </h1>
                             <p>
                                 <span className="text-yellow-500 font-semibold line-clamp-3">Description :{" "}</span>
-                                {lectures && lectures[currentVideo]?.lecture?.description}
+                                {lectures && lectures[currentVideo]?.description}
                             </p>
                         </div>
                         {/* Right side lecture list */}
                         <ul className=" flex flex-col justify-center items-center gap-4 p-4 shadow-[0_0_10px_black] rounded w-[28rem]">
-                            <li className="flex justify-between items-center">
+                            <li className="flex justify-between items-center gap-10">
                                 <h1>
                                     <span className="text-yellow-500 font-semibold text-2xl">Lecture list</span>
                                 </h1>

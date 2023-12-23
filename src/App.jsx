@@ -45,7 +45,7 @@ function App() {
           <Route path='/admin/dashboard' element={<AdminDashboard/>}/>
         </Route>
 
-        <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]} />}>
+        <Route element={<RequireAuth allowedRoles={["USER","ADMIN"]} />}>
           <Route path='/user/profile' element={<UserProfile />} />
           <Route path='/user/EditProfile' element={<EditProfile />} />
           <Route path='/user/subscribe' element={<Checkout />} />

@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import HomeLayout from "../../Layouts/HomeLayout";
-import { editProfileData, getUserData } from "../../Redux/Slice/AuthSlice";
-import {  BsArrowBarLeft, BsArrowLeft, BsPersonCircle } from "react-icons/bs";
+import {  BsArrowLeft, BsPersonCircle } from "react-icons/bs";
+import { editProfileData , getUserData} from "../../Redux/Slice/AuthSlice.js";
 
 function EditProfile() {
 
@@ -52,7 +52,7 @@ function EditProfile() {
     async function onSubmit(e) {
         e.preventDefault();
 
-        if (!data.fullName || !data.avatar) {
+        if (!data.fullName && !data.avatar) {
             toast.error("All fields are mandatroy");
             return;
         }
@@ -63,13 +63,14 @@ function EditProfile() {
         const formData = new FormData();
         formData.append("fullName", data.fullName);
         formData.append("avatar", data.avatar);
-
-        await dispatch.editProfileData([data.user_Id, formData]);
-
-        const response = await dispatch.getUserData();
-        if (response?.payload?.success) {
-            navigate("/user/profile");
-        }
+         
+         await dispatch(editProfileData(formData));
+       
+        const response = await dispatch(getUserData());
+        // console.log(response);
+        // if (response?.payload?.success) {
+        //     navigate("/");
+        // }
 
 
     }
@@ -97,7 +98,7 @@ function EditProfile() {
                                className="hidden"
                                type="file"
                                id="image_uploads"
-                               name="profileImage"
+                               name="avatar"
                                accept=".png , .jpeg , .jpg , .svg"
                                onChange={handleImage}
 

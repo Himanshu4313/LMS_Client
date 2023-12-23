@@ -37,7 +37,7 @@ export const createNewCourse = createAsyncThunk(
       formData.append("previewImage", data?.previewImage);
       formData.append("thumbnail", data?.thumbnail);
 
-      const response = await axiosInstance.post("/courses", formData);
+      const response =  axiosInstance.post("/courses", formData);
       toast.promise(response, {
         loading: "Wait! course is created",
         success: "course create successfully",
@@ -61,7 +61,7 @@ export const deleteCourse = createAsyncThunk(
   async (id) => {
     try {
 
-      const response = await axiosInstance.delete(`/courses/${id}`);
+      const response =  axiosInstance.delete(`/courses/${id}`);
       toast.promise(response, {
         loading: "Wait! course is deleting",
         success: "course delete successfully",
@@ -82,8 +82,9 @@ export const courseSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getAllCourses.fulfilled, (state, action) => {
+      console.log('all course list ',action.payload)
       if (action.payload) {
-        state.courseData = [...action.payload];
+        state.courseData = action.payload;
       }
     });
   },

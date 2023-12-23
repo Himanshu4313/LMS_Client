@@ -9,15 +9,16 @@ function CourseList(){
         /**
          * This dispatch part is working when we make a bakend of courseList 
          */
-   //  const dispatch =  useDispatch();
-  //  const {courseData} = useSelector((state) => state?.courseData);
+    const dispatch =  useDispatch();
+   const courseData = useSelector((state) => state?.courses?.courseData);
+      console.log('courseCardData',courseData);
 
-   //  async function loadCourses (){
-   //       await dispatch(getAllCourses());
-   //  }
-   //  useEffect(() => {
-   //       loadCourses();
-   //  },[]);
+    async function loadCourses (){
+         await dispatch(getAllCourses());
+    }
+    useEffect(() => {
+         loadCourses();
+    },[]);
 
          return(
             <>
@@ -30,10 +31,10 @@ function CourseList(){
                                         Industry Experts
                                     </span>
                                   </h1>
-                                  <div className=" flex flex-warp mb-10 gap-14">
-                                    {/* {courseData?.map((element) => {
+                                  <div className=" flex flex-warp mb-10 gap-14 justify-center">
+                                    {courseData?.map((element) => {
                                        return <CourseCard key={element._id} data={element}/>
-                                    })} */}
+                                    })}
                                   </div>
                        </div>
                         

@@ -7,7 +7,7 @@ function CourseCard({data}){
     return (
         <>
          <div
-          onClick={navigate("/course/description/" , {state  : {...data}})}
+          onClick={() =>navigate("/course/description/" , {state  : {...data}})}
           className="text-white w-[22rem] h-[430px] shadow-lg rounded-lg cursor-pointer group overflow-hidden bg-zinc-700">
                   <div className="overflow-hidden">
                          <img
@@ -31,7 +31,7 @@ function CourseCard({data}){
                                 <p className=" line-clamp-2 ">
                                     <span className="text-yellow-500 font-bold">Total Lecture :</span>
                                     {
-                                        data?.numberoflectures
+                                        data?.numberOfLectures
                                     }
                                 </p>
                                 <p className=" line-clamp-2 ">

@@ -14,7 +14,7 @@ function AddLecture() {
 
     const [userInput, setUserInput] = useState({
         //UNCOMMENT WHEN CREATE BACKEND
-        // id: courseDetails._id,
+        id: courseDetails._id,
         lecture: undefined,
         title: "",
         description: "",
@@ -37,6 +37,7 @@ function AddLecture() {
         const video = e.target.files[0];
         const source = window.URL.createObjectURL(video);
         console.log(source);
+        console.log(video);
         setUserInput({
             ...userInput,
             video_url: video,
@@ -46,7 +47,8 @@ function AddLecture() {
 
     async function onSubmit(e) {
         e.preventDefault();
-        if (!userInput.title || !userInput.lecture || !userInput.description) {
+        console.log('title',);
+        if (!userInput.title || !userInput.video_url || !userInput.description) {
             toast.error("All fields are mandatroy");
             return;
         }
@@ -54,7 +56,7 @@ function AddLecture() {
         if (response?.payload?.success) {
             setUserInput({
                 //UNCOMMENT WHEN CREATE BACKEND
-                // id: courseDetails._id,
+                id: courseDetails._id,
                 lecture: undefined,
                 title: "",
                 description: "",
@@ -66,9 +68,9 @@ function AddLecture() {
         }
     }
     //UNCOMMENT WHEN CREATE BACKEND
-    // useEffect(() => {
-    //     if (!courseDetails) navigate("/course");
-    // }, [])
+    useEffect(() => {
+        if (!courseDetails) navigate("/course");
+    }, [])
 
     return (
         <>

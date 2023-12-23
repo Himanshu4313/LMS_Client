@@ -25,11 +25,11 @@ function Description() {
 
                                     <p className="font-semibold ">
                                         <span className="text-xl font-bold text-yellow-500">Total lecture : {"  "}</span>
-                                        {/* {state?.numberoflecture} */}6
+                                        {state?.numberOfLectures}
                                     </p>
                                     <p className="font-semibold ">
                                         <span className="text-xl font-bold text-yellow-500">Instructor : {"  "}</span>
-                                        {/* {state?.createdBy} */} Vishwa Mohan
+                                        {state?.createdBy} 
                                     </p>
                                     {role === "ADMIN" || data?.subscription?.status === "active" ? (
 
@@ -56,8 +56,8 @@ function Description() {
                                 {state?.title}
                             </h1>
                             <p className="text-yellow-500 font-bold text-2xl">Course Description : </p>
-                            {/* <p>{state?.description}</p> */}
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit vel perspiciatis quia facilis debitis ad cum. Consequatur minima architecto vero delectus beatae quis incidunt perferendis reiciendis aliquid repellat sed voluptatum fuga quaerat veritatis quasi maiores eos corrupti commodi, voluptas labore enim assumenda quibusdam. </p>
+                            <p>{state?.description}</p>
+                           
                         </div>
                     </div>
                 </div>

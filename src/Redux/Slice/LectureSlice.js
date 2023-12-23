@@ -29,11 +29,11 @@ export const addCourseLecture = createAsyncThunk(
   async (data) => {
     try {
       const formData = new FormData();
-      formData.append("lecture", data.lecture);
+      formData.append("lecture", data.video_url);
       formData.append("title", data.title);
       formData.append("description", data.description);
 
-      const response = axiosInstance.post(`/course/${data.id}`, formData);
+      const response = axiosInstance.post(`/courses/${data.id}`, formData);
       toast.promise(response, {
         loading: "Course lecture is loading",
         success: "Course lecture add successfully",
@@ -70,6 +70,7 @@ const lectureSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getCourseLecture.fulfilled, (state, action) => {
+      console.log('payload lecture',action.payload.lectures)
       state.lectures = action?.payload?.lectures;
     });
     builder.addCase(addCourseLecture.fulfilled, (state, action) => {

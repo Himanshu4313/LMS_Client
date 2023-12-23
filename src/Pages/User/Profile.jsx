@@ -7,8 +7,10 @@ import { getUserData } from "../../Redux/Slice/AuthSlice";
 
 function UserProfile() {
 
-    const { data } = useSelector((state) => state?.auth);
-    console.log('profiledata', data);
+    const {data} = useSelector((state) => state?.auth);
+    
+    console.log('profiledataJSOn',JSON.parse(data) );
+    const userData = JSON.parse(data);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -18,6 +20,12 @@ function UserProfile() {
         navigate("/");
 
     }
+
+    // useEffect(async () => {
+    //     // getting user details
+    //    await dispatch(getUserData());
+    //   }, []);
+
     return (
         <>
             <HomeLayout>
@@ -26,23 +34,25 @@ function UserProfile() {
                         <div>
                             {console.log('avatar',data)}
                             <img
-                                src={data.avatar.secure_url}
+                                src={userData.avatar.secure_url}
 
                                 alt="ProfileImage"
                                 className="w-20 rounded-full border my-4 m-auto"
                             />
                             <h1 className="my-2 capitalize font-semibold text-xl">
-                                {data.fillName}
+                                {userData.fillName}
 
                             </h1>
                         </div>
                         <div className=" grid grid-cols-2 ">
+                            <p>Name : </p>
+                            <p>{userData.fullName}</p>
                             <p>Email : </p>
-                            <p>{data.email}</p>
+                            <p>{userData.email}</p>
                             <p>Role :</p>
-                            <p>{data.role}</p>
+                            <p>{userData.role}</p>
                             <p>Subscription: </p>
-                            <p>{data?.subscription?.status === 'active' ? "Active" : "Inactive"}</p>
+                            <p>{userData?.subscription?.status === 'active' ? "Active" : "Inactive"}</p>
                         </div>
                         <div className=" w-full flex justify-center items-center gap-2 my-3 mx-1">
 
@@ -58,7 +68,7 @@ function UserProfile() {
 
                         </div>
                         {/* In cancel subscription you can change some changes in backend when you create then this part is work fine */}
-                        {data?.subscription?.status === 'active' && (
+                        {userData?.subscription?.status === 'active' && (
                             <button
                                 onClick={handleCancelSubscription}
                                 className=" w-full px-3 py-2 bg-red-700 rounded-md text-center font-semibold cursor-pointer hover:bg-red-900 transition-all ease-in-out duration-300 ">

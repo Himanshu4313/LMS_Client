@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -38,7 +38,7 @@ function LoginPage() {
             return;
         }
 
-        console.log('before formData',logindata);
+        // console.log('before formData',logindata);
         // const loginData = new FormData();
         // loginData.append("email", loginData.email);
         // loginData.append("password", loginData.password);
@@ -47,12 +47,14 @@ function LoginPage() {
             password:logindata.password
         }
 
-        console.log('form Data',loginData);
+        // console.log('form Data',loginData);
         //dispatch login account action
         const response = await dispatch(login(loginData));
         if (response?.payload?.success) {
-
-            navigate("/");
+          
+               navigate("/");
+               window.location.reload();
+       
         }
 
 

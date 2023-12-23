@@ -26,8 +26,8 @@ function AdminDashboard() {
         datasets: [
             {
                 label: "User Details",
-                // data : [allUserCount , subscribeCount],
-                data: [80, 30],
+                data : [allUserCount , subscribeCount],
+                // data: [80, 30],
                 backgroundColor: ["yellow", "green"],
                 borderWidth: 2,
                 borderColor: ["yellow", "green"],
@@ -48,9 +48,18 @@ function AdminDashboard() {
             }
         ]
     }
+ async function loadCourses(){
+    await dispatch(getAllCourses());
+ }
+ useEffect(() =>{
+    loadCourses();
+ },[])   
+        
+      
+      
 
     const myCourses = useSelector((state) => state?.courses?.courseData);
-
+    console.log('Admin dashboard course list',myCourses)
     async function handleDeleteCourse(id) {
         if (window.confirm("Are you sure you want to delete this course ?")) {
             const res = await dispatch(deleteCourse(id));
@@ -86,14 +95,14 @@ function AdminDashboard() {
                                 <div className="flex justify-between items-center p-5 gap-5 rounded-md shadow-md ">
                                     <div className="flex flex-col justify-center items-center gap-5 text-white">
                                         <p className="text-xl font-semibold">Registered Users</p>
-                                        <h3 className="text-3xl font-bold">{80}</h3>
+                                        <h3 className="text-3xl font-bold">{allUserCount}</h3>
                                     </div>
                                     <FaUsers className="text-5xl font-bold text-yellow-500" />
                                 </div>
                                 <div className="flex justify-between items-center p-5 gap-5 rounded-md shadow-md ">
                                     <div className="flex flex-col justify-center items-center gap-5 text-white">
                                         <p className="text-xl font-semibold">Subscribe Users</p>
-                                        <h3 className="text-3xl font-bold">{10}</h3>
+                                        <h3 className="text-3xl font-bold">{subscribeCount}</h3>
                                     </div>
                                     <FaUsers className="text-5xl font-bold text-green-500" />
                                 </div>
@@ -190,7 +199,7 @@ function AdminDashboard() {
                                                 </button>
                                                 <button
                                                     className="bg-red-500 hover:bg-red-600 transition-all ease-in-out duration-300 text-xl py-2 px-4 rounded-md font-bold"
-                                                    onClick={() => onCourseDelete(course?._id)}
+                                                    onClick={() => handleDeleteCourse(course?._id)}
                                                 >
                                                     <BsTrash />
                                                 </button>

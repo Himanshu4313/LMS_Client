@@ -115,7 +115,7 @@ function HomeLayout({ children }) {
                                     <div className='w-full flex justify-center item-center flex-col md:flex-row lg:flex-row'>
 
                                         <button className=' btn-primary px-4 py-1 font-semibold rounded-md w-full '>
-                                            <Link to={'/user/profile'}>
+                                            <Link to={"/user/profile"}>
                                                 Profile
                                             </Link>
                                         </button>
