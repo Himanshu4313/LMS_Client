@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import HomeLayout from "../../Layouts/HomeLayout";
-import {  BsArrowLeft, BsPersonCircle } from "react-icons/bs";
-import { editProfileData , getUserData} from "../../Redux/Slice/AuthSlice.js";
+import { BsArrowLeft, BsPersonCircle } from "react-icons/bs";
+import { editProfileData, getUserData } from "../../Redux/Slice/AuthSlice.js";
 
 function EditProfile() {
 
@@ -63,14 +63,15 @@ function EditProfile() {
         const formData = new FormData();
         formData.append("fullName", data.fullName);
         formData.append("avatar", data.avatar);
-         
-         await dispatch(editProfileData(formData));
+
+        const response = await dispatch(editProfileData(formData));
+            // console.log('editprofileresponse',response);
+            // if (response?.meta?.requestStatus == 'fulfilled') {
+            //     await dispatch(getUserData());
+            //     navigate("/user/profile");
+            // }
        
-        const response = await dispatch(getUserData());
-        // console.log(response);
-        // if (response?.payload?.success) {
-        //     navigate("/");
-        // }
+
 
 
     }
@@ -79,52 +80,52 @@ function EditProfile() {
         <>
             <HomeLayout>
                 <div className="min-h-[100vh] flex justify-center items-center  ">
-                    <form 
-                    noValidate
-                    onSubmit={onSubmit}
-                    className="flex flex-col justify-center items-center gap-3 p-3 rounded-md shadow-[0_0_10px_black] py-4 px-10 text-white">
-                            <h1 className="text-xl font-semibold tracking-widest">Edit profile</h1>
-                            <label htmlFor="image_uploads"
-                                className="cursor-pointer">
-                                {data.previewImage ?
-                                    (<img className="w-20 h-20 rounded-full m-auto" src={data.previewImage} />)
-                                    :
-                                    (
-                                        <BsPersonCircle className="w-20 h-20  rounded-full m-auto" />
-                                    )
-                                }
-                               
-                               <input 
-                               className="hidden"
-                               type="file"
-                               id="image_uploads"
-                               name="avatar"
-                               accept=".png , .jpeg , .jpg , .svg"
-                               onChange={handleImage}
+                    <form
+                        noValidate
+                        onSubmit={onSubmit}
+                        className="flex flex-col justify-center items-center gap-3 p-3 rounded-md shadow-[0_0_10px_black] py-4 px-10 text-white">
+                        <h1 className="text-xl font-semibold tracking-widest">Edit profile</h1>
+                        <label htmlFor="image_uploads"
+                            className="cursor-pointer">
+                            {data.previewImage ?
+                                (<img className="w-20 h-20 rounded-full m-auto" src={data.previewImage} />)
+                                :
+                                (
+                                    <BsPersonCircle className="w-20 h-20  rounded-full m-auto" />
+                                )
+                            }
 
-                               />
-                            </label>
-                            <div className="flex flex-col justify-center  gap-2">
-                               <label htmlFor="full Name" className="font-semibold">Full Name</label>
-                               <input 
-                               required
-                               type="text"
-                               id="fullName"
-                               name="fullName"
-                               className="py-1 px-2 rounded-sm border w-fit trasparent"
-                               placeholder="Enter your full name..."
-                               onChange={handleUserInput}
-                               value={data.fullName}
-                               />
-                            </div>
+                            <input
+                                className="hidden"
+                                type="file"
+                                id="image_uploads"
+                                name="avatar"
+                                accept=".png , .jpeg , .jpg , .svg"
+                                onChange={handleImage}
 
-                            <button type="submit" className=" w-full py-2 text-center font-semibold rounded cursor-pointer bg-yellow-600 hover:bg-yellow-500 ">
-                                   Update Profile
-                            </button>
+                            />
+                        </label>
+                        <div className="flex flex-col justify-center  gap-2">
+                            <label htmlFor="full Name" className="font-semibold">Full Name</label>
+                            <input
+                                required
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                className="py-1 px-2 rounded-sm border w-fit trasparent"
+                                placeholder="Enter your full name..."
+                                onChange={handleUserInput}
+                                value={data.fullName}
+                            />
+                        </div>
 
-                            <Link  to={"/"} className="link text-green-700 flex justify-center items-center gap-2">
-                                <BsArrowLeft/>Go back to home
-                            </Link>
+                        <button type="submit" className=" w-full py-2 text-center font-semibold rounded cursor-pointer bg-yellow-600 hover:bg-yellow-500 ">
+                            Update Profile
+                        </button>
+
+                        <Link to={"/"} className="link text-green-700 flex justify-center items-center gap-2">
+                            <BsArrowLeft />Go back to home
+                        </Link>
 
                     </form>
                 </div>

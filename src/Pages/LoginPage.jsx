@@ -107,6 +107,7 @@ function LoginPage() {
                                     value={logindata.password}
                                 />
                             </div>
+                            <p ><Link to={"/user/forgot-password"} className="link text-green-500">Forgot-Password</Link></p>
                             <div>
                                 <button type="submit" className="bg-yellow-500 rounded 
                                 cursor-pointer font-semibold py-1 px-14 hover:bg-yellow-600 transition-all ease-in-out">Login</button>

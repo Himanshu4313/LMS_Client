@@ -21,6 +21,9 @@ import CheckoutRazorpayFail from './Pages/Razorpay/CheckoutFail';
 import DisplayLectures from './Pages/Dashboard/DisplayLectures';
 import AddLecture from './Pages/Dashboard/addLecture';
 import AdminDashboard from './Pages/Dashboard/AdminDashboard';
+import ForgotPassword from './Pages/User/Forgot-Password';
+import ResetPassword from './Pages/User/Reset-password';
+import ChangePassword from './Pages/User/Change-Password';
 
 function App() {
 
@@ -38,6 +41,9 @@ function App() {
         {/* Route for authentication */}
         <Route path='/signup' element={<SingUpPage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/user/forgot-password' element={<ForgotPassword/>}/>
+        <Route path='/reset-password/:resetToken' element={<ResetPassword/>}/>
+
 
         <Route element={<RequireAuth allowedRoles={["ADMIN"]} />}>
           <Route path='/course/create' element={<CreateCourse />} />
@@ -52,6 +58,7 @@ function App() {
           <Route path='/checkout/success' element={<CheckoutRazorpaySuccess />} />
           <Route path='/checkout/failed' element={<CheckoutRazorpayFail />} />
           <Route path='/course/displaylectures' element={<DisplayLectures />} />
+          <Route path='/change-password' element={<ChangePassword/>}/>
         </Route>
 
 
