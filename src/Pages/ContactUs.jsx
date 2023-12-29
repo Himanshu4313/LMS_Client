@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 
-import contactImage from '../assets/Image/contactImage.svg';
+import contactImage from '../assets/contactImage.svg';
 import axiosInstance from '../Helpers/axiosInstances';
 import { isEmailValid, isPasswordValid } from '../Helpers/regExrMatcher';
 import HomeLayout from "../Layouts/HomeLayout";
