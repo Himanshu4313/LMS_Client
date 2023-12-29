@@ -58,7 +58,7 @@ function ContactUs() {
         <>
             <HomeLayout>
                 <div className="min-h-[100vh] flex justify-center items-center lg:gap-40 ">
-                    <div className=' hidden md:hidden lg:block '>
+                    <div className=' hidden md:hidden lg:block w-1/2'>
                         <img src={contactImage} alt="contactImage " />
                     </div>
 
