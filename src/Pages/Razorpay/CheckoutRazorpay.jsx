@@ -33,7 +33,7 @@ function Checkout() {
             name: "Coursify Pvt. Ltd.",
             discription: "Subscription",
             theme: {
-                color: "#F37254",
+                color: "#4834DF",
             },
             prefill: {
                 email: userData.email,

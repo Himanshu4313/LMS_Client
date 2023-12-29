@@ -1,8 +1,8 @@
 import apjImage from '../assets/apj.png';
-import BillgatesImage from '../assets/billGates.png';
+import BillgatesImage from '../assets/billgates.png';
 import einsteinImage from '../assets/einstein.png';
-import NelsonMandelaImage from '../assets/nelsonMandela.png';
-import SteveJobsImage from '../assets/steveJobs.png';
+import NelsonMandelaImage from '../assets/nelsonmandela.png';
+import SteveJobsImage from '../assets/stevejobs.png';
  export const celebraties = [
     {
         image: BillgatesImage,

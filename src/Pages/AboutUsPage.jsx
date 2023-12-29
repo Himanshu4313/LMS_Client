@@ -1,4 +1,4 @@
-import AboutImage from "../assets/aboutMainImage.png";
+import AboutImage from "../assets/aboutmainimage.png";
 import CarouselSlider from "../Components/CarouselSlider";
 import { celebraties } from "../constant/SliderData";
 import HomeLayout from "../Layouts/HomeLayout";
