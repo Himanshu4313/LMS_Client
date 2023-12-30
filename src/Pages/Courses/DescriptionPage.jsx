@@ -11,7 +11,7 @@ function Description() {
         <>
             <HomeLayout>
                 <div className="w-full h-[90vh] flex  justify-center items-center flex-col py-10 px-5">
-                    <div className="grid grid-cols-2 gap-10 py-10 relative">
+                    <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 py-10 relative">
                         {/* Image part  */}
                         <div className="flex justify-center items-center flex-col gap-2">
 

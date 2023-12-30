@@ -31,7 +31,7 @@ function CourseList(){
                                         Industry Experts
                                     </span>
                                   </h1>
-                                  <div className=" flex flex-warp mb-10 gap-14 justify-center">
+                                  <div className=" flex justify-center items-center mb-6 gap-8 flex-wrap">
                                     {courseData?.map((element) => {
                                        return <CourseCard key={element._id} data={element}/>
                                     })}

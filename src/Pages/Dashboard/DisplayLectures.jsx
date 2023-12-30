@@ -38,14 +38,14 @@ function DisplayLectures() {
     return (
         <>
             <HomeLayout>
-                <div className="flex flex-col gap-10 justify-center items-center h-[100vh] text-white py-8 mx-4 ">
-                    <div className="text-center text-2xl font-semibold text-yellow-500">
+                <div className="flex flex-col gap-10 justify-center items-center h-[100vh] text-white py-8  mx-4 ">
+                    <div className="text-center text-lg md:text-2xl lg:text-2xl font-semibold text-yellow-500 ">
                         Course Name : {state.title}
                         
                     </div>
-                    {lectures && (<div className="flex justify-center items-center gap-10 w-full">
+                    {lectures && (<div className="flex flex-wrap justify-center items-center gap-10 w-full">
                         {/* Left side for playing video  */}
-                        <div className=" space-y-4 w-[28rem]   rounded shadow-[0_0_10px_black] p-2  ">
+                        <div className=" space-y-3 md:space-y-4 lg:space-y-4 w-[28rem]   rounded shadow-[0_0_10px_black] p-2  ">
                             <video
                                 src={lectures && lectures[currentVideo]?.lecture?.secure_url}
                                 muted
